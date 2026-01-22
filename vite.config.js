@@ -13,7 +13,6 @@ export default defineConfig({
     ViteImageOptimizer({
       lossless: true,
     }),
-    ,
     react(),
   ],
   ssr: {
@@ -25,8 +24,9 @@ export default defineConfig({
     },
   },
   build: {
+    outDir: "dist",
     rollupOptions: {
-      input: "src/main.jsx",
+      input: path.resolve(__dirname, "index.html"),
     },
   },
 });
